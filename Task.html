@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Navigation Menu</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  #navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 10px 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+  }
+  #navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: color 0.3s ease;
+  }
+  #navbar a:hover {
+    color: #ff0;
+  }
+  .scroll {
+    background-color: #555 !important;
+  }
+  /* Add more styling as needed */
+</style>
+</head>
+<body>
+<div id="navbar">
+  <a href="#" class="active">Home</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Contact</a>
+</div>
+<div style="height: 1000px;"> <!-- Just to create some scrollable content -->
+</div>
+<script>
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById("navbar").classList.add("scroll");
+    } else {
+      document.getElementById("navbar").classList.remove("scroll");
+    }
+  }
+</script>
+</body>
+</html>
